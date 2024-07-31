@@ -1,4 +1,7 @@
 db.users.updateMany(
-  { country: "China", is_blocked: "true" },
-  { $inc: { balance: 50 } }
+  { country: "China", status: "blocked" },
+  { 
+      $set: { status: "active" },
+      $inc: { balance: 50 }
+  }
 )
